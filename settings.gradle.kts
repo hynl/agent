@@ -14,5 +14,17 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AgentRTW"
-include(":app")
- 
+include(
+    ":app",
+    ":core:common",
+//    ":core:network",
+//    ":core:database",
+//    ":core:data",
+//    ":core:domain",
+//    ":feature:home"
+)
+
+include(":core:network")
+include(":core:database")
+include(":core:data")
+include(":core:domain")
