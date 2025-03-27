@@ -1,0 +1,20 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/local.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/gradle/caches
+/gradle/wrapper/dists
+/studio_workspace
+# Crashlytics backup files
+com_crashlytics_sdk_android_crashlytics
+crashlytics-build.properties
