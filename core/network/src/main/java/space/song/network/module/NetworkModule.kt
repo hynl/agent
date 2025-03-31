@@ -4,10 +4,13 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import space.song.network.api.ApiService
+import retrofit2.converter.kotlinx.serialization.asConverterFactory
+import space.song.network.api.DemoApiService
 import javax.inject.Singleton
 
 @Module
@@ -24,17 +27,23 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(
+        okHttpClient: OkHttpClient,
+        networkJson: Json,
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
+//            .addConverterFactory(
+//                networkJson.asConverterFactory("application/json".toMediaType()),
+//            )
             .build()
     }
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideApiService(retrofit: Retrofit): DemoApiService {
+        return retrofit.create(DemoApiService::class.java)
     }
 }

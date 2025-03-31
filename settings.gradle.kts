@@ -17,7 +17,7 @@ rootProject.name = "AgentRTW"
 include(
     ":app",
     ":core:common",
-//    ":core:network",
+    ":core:network",
 //    ":core:database",
 //    ":core:data",
 //    ":core:domain",
@@ -28,3 +28,5 @@ include(":core:network")
 include(":core:database")
 include(":core:data")
 include(":core:domain")
+include(":feature")
+include(":core:model")
