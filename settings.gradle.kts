@@ -16,12 +16,7 @@ dependencyResolutionManagement {
 rootProject.name = "AgentRTW"
 include(
     ":app",
-    ":core:common",
     ":core:network",
-//    ":core:database",
-//    ":core:data",
-//    ":core:domain",
-//    ":feature:home"
 )
 
 include(":core:network")
@@ -30,3 +25,5 @@ include(":core:data")
 include(":core:domain")
 include(":feature")
 include(":core:model")
+include(":core:common")
+include(":core:component")

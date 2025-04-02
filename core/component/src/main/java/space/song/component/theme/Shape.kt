@@ -1,4 +1,4 @@
-package space.song.agentrtw.ui.theme
+package space.song.component.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes

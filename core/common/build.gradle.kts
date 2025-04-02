@@ -1,8 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.hilt)
-    id("kotlin-kapt")
 }
 
 android {
@@ -35,14 +33,11 @@ android {
 }
 
 dependencies {
-    // 通用依赖
-    implementation(libs.android.core)
-    implementation(libs.compose.ui)
-    implementation(libs.compose.material)
-    // 所有Android库模块都需要这两个依赖
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
-    // 如果该模块需要提供Hilt绑定
-    kapt(libs.androidx.hilt.compiler)
-    //kapt(libs.hilt.compiler)
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.core)
 }

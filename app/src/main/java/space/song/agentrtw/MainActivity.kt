@@ -10,8 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import dagger.hilt.android.AndroidEntryPoint
-import space.song.agentrtw.ui.theme.AgentRTWTheme
+import space.song.component.theme.AgentRTWTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -35,7 +36,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
-        text = "Hello $name!",
+        text = "Hello $name! ？？？",
         modifier = modifier
     )
 }
