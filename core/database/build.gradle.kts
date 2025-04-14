@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt)
+//    alias(libs.plugins.room)
     id("kotlin-kapt")
 }
 
@@ -38,12 +39,16 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+
     // Hilt 核心依赖
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler) // 必须用 kapt 而不是 annotationProcessor
 
-    // 如果模块需要提供 Hilt 绑定
-    kapt(libs.androidx.hilt.compiler)
+    // Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx) // Optional - Kotlin Extensions and Coroutines support for Room
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

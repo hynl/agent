@@ -4,6 +4,8 @@ plugins {
     id("com.google.dagger.hilt.android")
     id("kotlin-kapt")
     alias(libs.plugins.compose)
+    alias(libs.plugins.kotlin.serialization)
+
 }
 
 android {
@@ -64,9 +66,10 @@ dependencies {
     implementation(project(":core:component"))
     implementation(project(":core:common"))
     implementation(project(":core:network"))
-    implementation(project(":core:database"))
     implementation(project(":core:data"))
+    implementation(project(":core:model"))
     implementation(project(":core:domain"))
+    implementation(project(":core:datastore"))
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -74,6 +77,8 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
+
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.material3.adaptive)

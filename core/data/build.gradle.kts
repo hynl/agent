@@ -36,14 +36,20 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+    implementation(project(":core:model"))
+    implementation(project(":core:datastore"))
+    implementation(project(":core:database"))
+    implementation(project(":core:network"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    // Hilt 核心依赖
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler) // 必须用 kapt 而不是 annotationProcessor
+    implementation(libs.material)
 
-    // 如果模块需要提供 Hilt 绑定
-    kapt(libs.androidx.hilt.compiler)
+    //引入hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.core)

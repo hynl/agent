@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.hilt)
+    id("kotlin-kapt")
 }
 
 android {
@@ -33,6 +35,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
+    implementation(project(":core:data"))
+    implementation(project(":core:common"))
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler) // 必须用 kapt 而不是 annotationProcessor
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

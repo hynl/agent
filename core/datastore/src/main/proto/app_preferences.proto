@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+option java_package = "space.song.datastore.proto";
+option java_multiple_files = true;
+message AppPreferences {
+    bool isFirstLaunch = 1;
+    int32 autoFlags = 2;
+    int32 themeFlags = 3;
+    int32 loginFlags = 4;
+    int32 appModeFlags = 5;
+
+    // NEXT AVAILABLE ID: 6
+}

@@ -16,9 +16,11 @@
             <option value="$PROJECT_DIR$/core/component" />
             <option value="$PROJECT_DIR$/core/data" />
             <option value="$PROJECT_DIR$/core/database" />
+            <option value="$PROJECT_DIR$/core/datastore" />
             <option value="$PROJECT_DIR$/core/domain" />
             <option value="$PROJECT_DIR$/core/model" />
             <option value="$PROJECT_DIR$/core/network" />
+            <option value="$PROJECT_DIR$/core/sync" />
             <option value="$PROJECT_DIR$/feature" />
           </set>
         </option>
